@@ -7,7 +7,7 @@ on:
   workflow_dispatch: # ⬅️ biar bisa run manual dari GitHub UI
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
