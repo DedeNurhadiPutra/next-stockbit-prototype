@@ -1,10 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Home() {
+  useEffect(() => {
+    fetch("/api/me")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("User session:", data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  const isLoggedIn = true;
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        {!isLoggedIn && <Skeleton className="h-[20px] w-[100px] rounded-full bg-amber-600" />}
         <Image
           className="dark:invert"
           src="/next.svg"
