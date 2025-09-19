@@ -12,6 +12,6 @@ import { render } from "@testing-library/react";
 import { Button } from "./button";
 
 test("button snapshot", () => {
-  const { container } = render(<Button>Click me</Button>);
+  const { container } = render(<Button>Click me p</Button>);
   expect(container).toMatchSnapshot();
 });
