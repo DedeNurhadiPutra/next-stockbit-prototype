@@ -7,7 +7,7 @@ const withBundleAnalyzer = createAnalyzer({
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  // swcMinify: true, // Disabled due to known compatibility issues with certain dependencies. Re-enable after resolving related bugs.
 };
 
 export default withBundleAnalyzer(nextConfig);
