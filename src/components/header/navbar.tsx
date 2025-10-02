@@ -1,45 +1,68 @@
+"use client";
+
 import {
   NavigationMenu,
-  NavigationMenuContent,
+  NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import {
+  MessageSquareHeartIcon,
+  UserIcon,
+  StarIcon,
+  ClockIcon,
+  BookOpenIcon,
+  BarChart2Icon,
+  ActivityIcon,
+  GraduationCapIcon,
+  FileTextIcon,
+  GemIcon,
+  DollarSignIcon,
+} from "lucide-react";
 
-export default function Navbar() {
+const navItems = [
+  { label: "Stream", href: "/", icon: MessageSquareHeartIcon },
+  { label: "Profile", href: "/profile", icon: UserIcon },
+  { label: "Watchlist", href: "/watchlist", icon: StarIcon },
+  { label: "Portfolio", href: "/portfolio", icon: ClockIcon },
+  { label: "Orderbook", href: "/orderbook", icon: BookOpenIcon },
+  { label: "Chartbit", href: "/chartbit", icon: BarChart2Icon },
+  { label: "e-IPO", href: "/eipo", icon: ActivityIcon },
+  { label: "Screener", href: "/screener", icon: GemIcon },
+  { label: "Academy", href: "/academy", icon: GraduationCapIcon },
+  { label: "Insider Activity", href: "/insider", icon: FileTextIcon },
+  { label: "Valuation", href: "/valuation", icon: DollarSignIcon },
+  { label: "Financials", href: "/financials", icon: FileTextIcon },
+  { label: "Fundachart", href: "/fundachart", icon: BarChart2Icon },
+];
+
+export default function NavbarNoViewport() {
   return (
-    <NavigationMenu>
+    <NavigationMenu viewport={false}>
       <NavigationMenuList>
-        <NavigationMenuLink>
-          <Link href="/">Item One</Link>
-        </NavigationMenuLink>
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Item Two</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <NavigationMenuLink>
-              <Link href="/">Go to Item Two</Link>
+        {navItems.map(({ label, href, icon: Icon }) => (
+          <NavigationMenuItem key={label}>
+            <NavigationMenuLink asChild>
+              <Link
+                href={href}
+                className="flex flex-row items-center justify-center gap-1 p-[14px] text-sm text-gray-700 hover:text-black"
+              >
+                {Icon && <Icon className="h-4 w-4 text-pink-400" />}
+                {label}
+              </Link>
             </NavigationMenuLink>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
+          </NavigationMenuItem>
+        ))}
+
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Item Three</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuContent className="absolute left-0 mt-2 min-w-[200px] rounded-md border bg-white p-4 shadow">
             <NavigationMenuLink>
               <Link href="/">Go to Item Three</Link>
             </NavigationMenuLink>
           </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Item Four</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <NavigationMenuLink>
-              <Link href="/">Go to Item Four</Link>
-            </NavigationMenuLink>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );
