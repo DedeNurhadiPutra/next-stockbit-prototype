@@ -1,11 +1,9 @@
 "use client";
 
-import Header from "@/components/header";
-
 export default function Home() {
   return (
-    <div className="flex w-full min-h-screen bg-gray-400">
-      <Header />
+    <div className="flex flex-1 items-center justify-center">
+      <h1 className="text-2xl font-bold">Dashboard</h1>
     </div>
   );
 }
