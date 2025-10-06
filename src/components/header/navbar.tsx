@@ -26,7 +26,7 @@ const navItems = [
   { label: "Profile", href: "/profile", icon: UserIcon },
   { label: "Watchlist", href: "/watchlist", icon: StarIcon },
   { label: "Portfolio", href: "/portfolio", icon: ClockIcon },
-  { label: "Orderbook", href: "/orderbook", icon: BookOpenIcon },
+  { label: "Layout", href: "/layout", icon: BookOpenIcon },
   { label: "Chartbit", href: "/chartbit", icon: BarChart2Icon },
   { label: "e-IPO", href: "/eipo", icon: ActivityIcon },
   { label: "Screener", href: "/screener", icon: GemIcon },
